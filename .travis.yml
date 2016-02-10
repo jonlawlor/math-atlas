@@ -1,15 +1,12 @@
-language: c
+sudo: required
 
-addons:
- apt:
-  packages:
-  - txt2man
-  - g77
+language: c
 
 before_install:
  - pwd
  - mkdir libatlas
  - curl -O http://www.netlib.org/lapack/lapack-3.6.0.tgz
+ - sudo apt-get install txt2man gfortran
  - make
  - cd TEST
 
