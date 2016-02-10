@@ -6,9 +6,11 @@ before_install:
  - pwd
  - mkdir libatlas
  - curl -O http://www.netlib.org/lapack/lapack-3.6.0.tgz
+ - ls -la
  - sudo apt-get update -qq
  - sudo apt-get install -qq txt2man
  - sudo apt-get install -qq gfortran
+ - find / -name "*gcc*" -print 2> /dev/null
  - make
  - cd TEST
 
@@ -19,6 +21,6 @@ script:
  - cd ATLAS
  - mkdir BLDdir
  - cd BLDdir
- - ../configure --prefix=~/libatlas --with-netlib-lapack-tarfile=~/lapack-3.6.0.tgz
+ - ../configure --prefix=/home/travis/build/jonlawlor/math-atlas/libatlas --with-netlib-lapack-tarfile=/home/travis/build/jonlawlor/math-atlas/lapack-3.6.0.tgz -C alg gcc-4.6.3'
  - make build
  - make test
