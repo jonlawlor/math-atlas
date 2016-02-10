@@ -9,7 +9,7 @@ addons:
 before_install:
  - pwd
  - mkdir libatlas
- - curl http://www.netlib.org/lapack/lapack-3.6.0.tgz
+ - curl -O http://www.netlib.org/lapack/lapack-3.6.0.tgz
  - make
  - cd TEST
 
