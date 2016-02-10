@@ -6,7 +6,7 @@ before_install:
  - pwd
  - mkdir libatlas
  - curl -O http://www.netlib.org/lapack/lapack-3.6.0.tgz
- - sudo apt-get install txt2man gfortran-4.6
+ - sudo apt-get install txt2man gfortran-4.4
  - make
  - cd TEST
 
